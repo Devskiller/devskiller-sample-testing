@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search engine</title>
+</head>
+
+<body>
+
+<form action="/" method="get">
+  <label for="search">Search term:</label>
+  <input type="text" id="q" name="q"><br>
+  <input type="submit" value="Submit">
+</form>
+
+{% if result is defined and result|length > 0 %}
+<table border=1>
+  {% for r in result %}
+  <tr>
+    <td> {{r}} </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+</body>
+</html>
